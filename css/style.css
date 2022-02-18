@@ -1,0 +1,198 @@
+body{
+    margin: 0%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-repeat: no-repeat;
+    background-color: #e4b5cb;
+    background-image: linear-gradient(315deg, #e4b5cb 0%, #722ae6 74%);
+}
+
+.nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid white;
+    width: 100%;
+    height: 10%;
+}
+.nav h1{
+    color: white;
+    margin: 0%;
+    text-transform: uppercase;
+}
+
+.nav input{
+    width: 20%;
+    height: 45px;
+    padding-left: 10px;
+    border: 0;
+    outline: none;
+    border-radius: 12px;
+    text-transform:capitalize;
+}
+.list{
+    display: flex;
+    list-style: none;
+}
+.list li{
+    margin: 0 40px;
+}
+.list li a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.banner{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.card{
+    width: 450px;
+    height: 400px;
+    overflow: hidden;
+    background: rgba( 144, 19, 254, 0.2 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 3.5px );
+    -webkit-backdrop-filter: blur( 3.5px );
+    border-radius: 10%;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    position: relative;
+    transition: 0.3s;
+    margin: 0px 20px;
+}
+.card:hover{
+    border-radius: 10px;
+    width: 750px;
+}
+.card img{
+    position: absolute;
+    width: 400px;
+    height: 350px;
+    bottom: 0;
+    top: 5%;
+    left: 5%;
+    object-fit: cover;
+    transition: 0.5s;
+    animation-name: cards;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+ @keyframes cards {
+    50%{
+        top: -20px;
+    }
+ }
+
+.card:hover img{
+    left: -5%;
+    animation: none;
+}
+.card .content{
+    position: absolute;
+    right: 0%;
+    width: 300px;
+    height: 100%;
+    padding: 0 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    opacity: 0;
+    visibility: 0;
+    transition: 0.5s;
+}
+
+.card .content h1{
+    margin-bottom: 0;
+}
+.card .content p{
+    font-size: 18px;
+    line-height: 1.6em;
+}
+
+.card:hover .content{
+    opacity: 1;
+    visibility: 1;
+
+}
+
+
+.burger{
+    display: none;
+}
+@media (max-width:1476px) {
+    .banner{
+        flex-wrap: wrap;
+    }
+    .card{
+        margin: 30px 0;
+    }
+}
+
+@media (max-width:854px) {
+    .nav{
+        height: 70px;
+    }
+    .nav input{
+        width: 50%;
+    }
+    .list{
+        display: none;
+    }
+    .burger{
+        display: block;
+        color: white;
+        font-size: 20px;
+    }
+}
+ @media screen and (max-width:610px) {
+     .card{
+        max-width: 450px;
+     }
+     .card:hover{
+        height: 600px;
+     }
+     .card:hover img{
+        top: -10%;
+        left: 5%;
+     }
+     .card:hover .content{
+        top: 20%;
+        left: 15%;
+     }
+
+    
+}
+@media screen and (max-width:375px) {
+    .nav input{
+        display: none;
+    }
+    .nav{
+        width: 90%;
+        padding: 0 5%;
+        justify-content: space-between;
+    }
+    .burger{
+        font-size: 25px;
+    }
+    .banner{
+        width: 90%;
+        padding: 0 5%;
+    }
+    .card img{
+        left: -5%;
+    }
+    .card:hover img{
+        left: -5%;
+    }
+    .card:hover .content {
+        left: 0;
+    }
+}
