@@ -1,32 +1,32 @@
 body{
     margin: 0%;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-repeat: no-repeat;
     background-color: #e4b5cb;
     background-image: linear-gradient(315deg, #e4b5cb 0%, #722ae6 74%);
+    color: white;
 }
 
+/* THE NAV-BAR */
+
 .nav{
+    width: 100%;
+    height: 10%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     border-bottom: 1px solid white;
-    width: 100%;
-    height: 10%;
 }
 .nav h1{
-    color: white;
-    margin: 0%;
     text-transform: uppercase;
 }
 
 .nav input{
     width: 20%;
     height: 45px;
-    padding-left: 10px;
+    padding: 0 15px;
+    border-radius: 50px;
     border: 0;
-    outline: none;
-    border-radius: 12px;
+    outline: 0;
     text-transform:capitalize;
 }
 .list{
@@ -40,8 +40,11 @@ body{
     text-decoration: none;
     color: white;
     font-size: 20px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
+/* END NAV-BAR */
+
+/* THE BANNER */
 .banner{
     width: 100%;
     height: 100vh;
@@ -49,64 +52,73 @@ body{
     justify-content: space-evenly;
     align-items: center;
 }
+/* END THE BANNER */
 
+/* START CARDS */
 .card{
+    position: relative;
     width: 450px;
     height: 400px;
     overflow: hidden;
     background: rgba( 144, 19, 254, 0.2 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 3.5px );
-    -webkit-backdrop-filter: blur( 3.5px );
     border-radius: 10%;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
-    position: relative;
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    -webkit-backdrop-filter: blur( 3.5px );
     transition: 0.3s;
     margin: 0px 20px;
 }
 .card:hover{
-    border-radius: 10px;
     width: 750px;
+    border-radius: 10px;
 }
 .card img{
     position: absolute;
     width: 400px;
     height: 350px;
-    bottom: 0;
     top: 5%;
     left: 5%;
+    bottom: 0;
     object-fit: cover;
     transition: 0.5s;
+}
+.card:hover img{
+    left: -5%;
+}
+
+/* END THE CARDS */
+
+/* ================================================================================== */
+
+    /* Removed animations due to the fact that the site Freezes !!! */
+
     /* animation-name: cards;
     animation-duration: 2.5s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite; */
-}
 
- /* @keyframes cards {
-    50%{
-        top: -20px;
-    }
- } */
+ /* ================================================================================== */
 
-.card:hover img{
-    left: -5%;
-    animation: none;
-}
+
+ /* START CARDS CONTENT */
 .card .content{
     position: absolute;
-    right: 0%;
     width: 300px;
     height: 100%;
     padding: 0 20px;
-    color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    right: 0%;
     opacity: 0;
     visibility: 0;
     transition: 0.5s;
+}
+
+.card:hover .content{
+    opacity: 1;
+    visibility: 1;
 }
 
 .card .content h1{
@@ -116,23 +128,22 @@ body{
     font-size: 18px;
     line-height: 1.6em;
 }
+/* END THE CARDS CONTENT */
 
-.card:hover .content{
-    opacity: 1;
-    visibility: 1;
-
-}
-
-
+/* BURGER MENU ICON */
 .burger{
     display: none;
 }
+
+                            /* MEDIA PART */
+
 @media (max-width:1476px) {
     .banner{
         flex-wrap: wrap;
+        margin-top: 50px;
     }
     .card{
-        margin: 30px 0;
+        margin: 30px 10px;
     }
 }
 
@@ -149,9 +160,10 @@ body{
     .burger{
         display: block;
         color: white;
-        font-size: 20px;
+        font-size: 30px;
     }
 }
+
  @media screen and (max-width:610px) {
      .card{
         max-width: 450px;
@@ -170,6 +182,13 @@ body{
 
     
 }
+
+@media screen and (max-width:440px){
+    .card:hover .content{
+        left: 10%;
+    }
+}
+
 @media screen and (max-width:375px) {
     .nav input{
         display: none;
@@ -180,7 +199,7 @@ body{
         justify-content: space-between;
     }
     .burger{
-        font-size: 25px;
+        font-size: 28px;
     }
     .banner{
         width: 90%;
